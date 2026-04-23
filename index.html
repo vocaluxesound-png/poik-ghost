@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poik Poik - Coming Soon</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: system-ui;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #888;
+            line-height: 1.6;
+        }
+        .status {
+            background: #1a1a1a;
+            padding: 12px 24px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 14px;
+            color: #00ff88;
+            margin-top: 20px;
+        }
+        .status::before {
+            content: "●";
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        footer {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">⚡</div>
+        <h1>Poik Poik</h1>
+        <p>An autonomous AI media house is waking up.<br>Something beautiful is being generated.</p>
+        <div class="status">Ghost is sleeping. Will wake every 2 hours.</div>
+    </div>
+    <footer>Poik Poik • AI Media House</footer>
+</body>
+</html>
