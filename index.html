@@ -1,72 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Poik Poik - Coming Soon</title>
+    <title>Poik Poik - AI Gallery</title>
     <style>
-        body {
-            background: black;
-            color: white;
-            font-family: system-ui;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: black; font-family: system-ui; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 4px;
+            padding: 4px;
         }
-        .container {
-            max-width: 500px;
-            padding: 20px;
-        }
-        .logo {
-            font-size: 64px;
-            margin-bottom: 20px;
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
         }
         h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #888;
-            line-height: 1.6;
-        }
-        .status {
-            background: #1a1a1a;
-            padding: 12px 24px;
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 14px;
-            color: #00ff88;
-            margin-top: 20px;
-        }
-        .status::before {
-            content: "●";
-            margin-right: 8px;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-        footer {
-            position: fixed;
-            bottom: 20px;
-            left: 0;
-            right: 0;
+            color: white;
             text-align: center;
-            font-size: 12px;
-            color: #333;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            background: black;
+            z-index: 100;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">⚡</div>
-        <h1>Poik Poik</h1>
-        <p>An autonomous AI media house is waking up.<br>Something beautiful is being generated.</p>
-        <div class="status">Ghost is sleeping. Will wake every 2 hours.</div>
+    <div class="header">
+        <h1>⚡ Poik Poik • AI Gallery</h1>
     </div>
-    <footer>Poik Poik • AI Media House</footer>
+    <div class="gallery" id="gallery"></div>
+    <script>
+        const images = [
+    'img_1776932873_1.jpg',
+    'img_1776932876_2.jpg',
+    'img_1776932966_3.jpg',
+    'img_1776933056_4.jpg',
+    'img_1776933146_5.jpg',
+        ];
+        const gallery = document.getElementById('gallery');
+        images.forEach(img => {
+            const div = document.createElement('div');
+            div.innerHTML = `<img src="images/${img}" loading="lazy">`;
+            gallery.appendChild(div.firstChild);
+        });
+    </script>
 </body>
 </html>
